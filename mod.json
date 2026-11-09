@@ -1,0 +1,122 @@
+{
+	"geode": "5.0.0",
+	"gd": {
+		"win": "2.2081",
+		"android": "2.2081",
+		"mac": "2.2081",
+		"ios": "2.2081"
+	},
+	"id": "rallygagler.daily-demon-suggestions",
+	"name": "Daily Demon Suggestions",
+	"version": "v2.0.0",
+	"developer": "rallygagler",
+	"description": "Suggests demons to beat: easy to insane from GDDL, extremes from AREDL, and top list demons from Pointercrate.",
+	"settings": {
+		"suggestion-count": {
+			"type": "int",
+			"name": "Suggestions per category",
+			"description": "How many levels to suggest at once (you pick one).",
+			"default": 10,
+			"min": 1,
+			"max": 10,
+			"control": { "arrows": true, "slider": true }
+		},
+		"min-likes": {
+			"type": "int",
+			"name": "Minimum likes",
+			"description": "Only suggest levels with at least this many likes. Set to 0 to turn the check off.",
+			"default": 4000,
+			"min": 0,
+			"max": 200000,
+			"control": { "arrows": true, "slider": false }
+		},
+		"skip-completed": {
+			"type": "bool",
+			"name": "Skip levels I've beaten",
+			"description": "Never suggest levels you already completed.",
+			"default": true
+		},
+		"use-profile": {
+			"type": "bool",
+			"name": "Use my profile",
+			"description": "Prefer levels that match your hardest demon, gamemodes, style and skills.",
+			"default": true
+		},
+		"freq-easy": {
+			"type": "string",
+			"name": "Easy demons refresh",
+			"default": "Daily",
+			"one-of": ["Daily", "Weekly", "Monthly"]
+		},
+		"freq-medium": {
+			"type": "string",
+			"name": "Medium demons refresh",
+			"default": "Daily",
+			"one-of": ["Daily", "Weekly", "Monthly"]
+		},
+		"freq-hard": {
+			"type": "string",
+			"name": "Hard demons refresh",
+			"default": "Daily",
+			"one-of": ["Daily", "Weekly", "Monthly"]
+		},
+		"freq-insane": {
+			"type": "string",
+			"name": "Insane demons refresh",
+			"default": "Weekly",
+			"one-of": ["Daily", "Weekly", "Monthly"]
+		},
+		"freq-extreme": {
+			"type": "string",
+			"name": "Extreme demons refresh",
+			"default": "Weekly",
+			"one-of": ["Daily", "Weekly", "Monthly"]
+		},
+		"freq-list": {
+			"type": "string",
+			"name": "List demons refresh",
+			"default": "Monthly",
+			"one-of": ["Daily", "Weekly", "Monthly"]
+		},
+		"easy-max-tier": {
+			"type": "int",
+			"name": "Easy demons: highest GDDL tier",
+			"description": "Tiers 1 up to this number count as Easy.",
+			"default": 5, "min": 1, "max": 34,
+			"control": { "arrows": true, "slider": false }
+		},
+		"medium-max-tier": {
+			"type": "int",
+			"name": "Medium demons: highest GDDL tier",
+			"default": 10, "min": 1, "max": 34,
+			"control": { "arrows": true, "slider": false }
+		},
+		"hard-max-tier": {
+			"type": "int",
+			"name": "Hard demons: highest GDDL tier",
+			"default": 15, "min": 1, "max": 34,
+			"control": { "arrows": true, "slider": false }
+		},
+		"insane-max-tier": {
+			"type": "int",
+			"name": "Insane demons: highest GDDL tier",
+			"default": 20, "min": 1, "max": 34,
+			"control": { "arrows": true, "slider": false }
+		},
+		"gddl-url": {
+			"type": "string",
+			"name": "GDDL list URL (advanced)",
+			"default": "https://gdladder.com/api/theList"
+		},
+		"aredl-url": {
+			"type": "string",
+			"name": "AREDL list URL (advanced)",
+			"default": "https://api.aredl.net/v2/api/aredl/levels"
+		},
+		"pointercrate-url": {
+			"type": "string",
+			"name": "Pointercrate list URL (advanced)",
+			"default": "https://pointercrate.com/api/v2/demons/listed/?limit=75"
+		}
+	}
+}
